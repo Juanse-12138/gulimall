@@ -1,0 +1,30 @@
+package com.hyl.gulimall.product.vo.catelogvo;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+
+/**
+ * @author hyl_marco
+ * @data 2022/4/15 - 16:09
+ */
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+public class Catelog2Vo {
+    private String catalog1Id;
+    private List<Catelog3Vo> catalog3List;
+    private String id;
+    private String name;
+
+    @NoArgsConstructor
+    @AllArgsConstructor
+    @Data
+    public static class Catelog3Vo{
+        private String catalog2Id;
+        private String id;
+        private String name;
+    }
+}
