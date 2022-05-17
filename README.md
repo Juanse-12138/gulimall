@@ -1,11 +1,21 @@
 # guilimall
 
 #### 介绍
-mail
+#####基本功能细节介绍：
+ 1. 商城后台管理系统：商品属性管理，商品发布与上架，商品库存管理、订单管理、用户管理等功能；
+ 2. 商城本体：商城本体可以实现用户登录、商品全文索引信息查询、购物车等功能；
+#####主要开发工作：
+ 1. 电商平台商品服务、仓储服务、检索服务、认证服务等各个微服务的业务逻辑CRUD 以及前后端联调；
+ 2. SpringCloud Gateway 作为分布式微服务API 网关实现路由转发等，SpringCloud Feign 完成各微服务之间的远程调用；
+ 3. SpringCloudAlibaba Nacos 作为配置中心和注册中心，感知各个微服务的位置，对各微服务进行健康管理，同时将各个配置
+文件上传至网上，实现源码与配置的分离；
+ 4. 通过Docker 容器部署Mysql、Nginx、Redis、Elasticsearch 等组件，使用阿里云对象储存对图片等文件进行储存，实现服
+务端签名后直传。
 
 #### 软件架构
-软件架构说明
-
+分布式微服务B2C 电商平台 后端开发
+技术栈：SpringBoot + Mybatis-Plus + Mysql + Redis + Nginx + Nacos
+链接：https://gitee.com/hylonggg/guilimall.git
 
 #### 安装教程
 
@@ -16,22 +26,4 @@ mail
 #### 使用说明
 
 1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+2.com/gitee-stars/)
