@@ -13,5 +13,34 @@
         <result property="catelogId" column="catelog_id"/>
     </resultMap>
 
+    <!--有嵌套属性封装自定义结果集,这里要起别名才会封装重复列值？？-->
+    <resultMap id="spuItemAttrGroupVo" type="com.hyl.gulimall.product.vo.skuItemvo.SpuItemAttrGroupVo">
+        <result property="groupName" column="attr_group_name"/>
+        <collection property="attrValues" ofType="com.hyl.gulimall.product.vo.skuItemvo.SpuBaseAttrVo">
+            <result column="attr_name" property="attrName"/>
+            <result column="attr_value" property="attrValue"/>
+        </collection>
+    </resultMap>
+
+    <select id="getAttrGroupWithAttrsBySpuId" resultMap="spuItemAttrGroupVo">
+        SELECT
+            pav.`spu_id`,
+            ag.`attr_group_name`,
+            ag.`attr_group_id`,
+            aar.`attr_id`,
+            attr.`attr_name`,
+            pav.`attr_value`
+        FROM
+            `pms_attr_group` ag
+        LEFT JOIN
+            `pms_attr_attrgroup_relation` aar ON ag.`attr_group_id` = aar.`attr_group_id`
+        LEFT JOIN
+            `pms_attr` attr ON aar.`attr_id` = attr.`attr_id`
+        LEFT JOIN
+            `pms_product_attr_value` pav ON pav.`attr_id` = attr.`attr_id`
+        WHERE
+            ag.catelog_id = #{catalogId} AND pav.`spu_id` = #{spuId};
+    </select>
+
 
 </mapper>

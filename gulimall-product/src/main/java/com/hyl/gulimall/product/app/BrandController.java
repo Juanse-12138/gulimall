@@ -1,6 +1,7 @@
 package com.hyl.gulimall.product.app;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import com.hyl.common.validator.group.AddGroup;
@@ -8,11 +9,7 @@ import com.hyl.common.validator.group.UpdateGroup;
 import com.hyl.common.validator.group.UpdateGroupStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.hyl.gulimall.product.entity.BrandEntity;
 import com.hyl.gulimall.product.service.BrandService;
@@ -32,6 +29,12 @@ import com.hyl.common.utils.R;
 public class BrandController {
     @Autowired
     private BrandService brandService;
+
+    @GetMapping("/infos")
+    public R info(@RequestParam("brandIds") List<Long> brandIds){
+        List<BrandEntity> brands = brandService.getBrandsByIds(brandIds);
+        return R.ok().put("brands",brands);
+    }
 
     /**
      * 列表

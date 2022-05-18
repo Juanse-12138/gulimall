@@ -26,7 +26,7 @@ public class IndexController {
         /*TODO：查出所有的1级分类*/
         List<CategoryEntity> categoryEntities = categoryService.getLevel1Categorys();
 
-
+        System.out.println(categoryEntities);
         model.addAttribute("categorys",categoryEntities);
         /*//classpath:/templates/ + 返回值 + .html*/
         /*前缀 + 后缀*/
@@ -36,7 +36,7 @@ public class IndexController {
     @ResponseBody
     @GetMapping("/index/catalog.json")
     public Map<String, List<Catelog2Vo>> getCatalogJson(){
-
+        System.out.println("获取分类的Json数据");
         Map<String, List<Catelog2Vo>> map = categoryService.getCatalogJson();
         return map;
     }

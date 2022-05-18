@@ -27,8 +27,9 @@ import com.hyl.common.utils.R;
 @RestController
 @RequestMapping("product/attrattrgrouprelation")
 public class AttrAttrgroupRelationController {
+
     @Autowired
-    private AttrAttrgroupRelationService attrAttrgroupRelationService;
+    AttrAttrgroupRelationService attrAttrgroupRelationService;
 
     /**
      * 列表
