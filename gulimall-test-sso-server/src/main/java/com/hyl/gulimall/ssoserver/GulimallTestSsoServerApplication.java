@@ -1,13 +1,13 @@
-package com.hyl.gulimall.lware;
+package com.hyl.gulimall.ssoserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GulimallWareApplication {
+public class GulimallTestSsoServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(GulimallWareApplication.class, args);
+        SpringApplication.run(GulimallTestSsoServerApplication.class, args);
     }
 
 }
